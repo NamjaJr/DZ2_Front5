@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import UserPage from "./pages/UserPage/UserPage/UserPage";
+import { Route, BrowserRouter, Routes, useParams } from "react-router-dom";
+import UsersPage from "./pages/UserPage/UsersPage/UsersPage";
+import { useSelector } from "react-redux";
+
+const App = () => {
+  const users = useSelector((state) => state.fetchUsers.users);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<UserPage />} />
+        <Route path="/user/:id" element={<UsersPage users={users} />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
