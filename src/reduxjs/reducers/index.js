@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import fetchUsers from "./UserReducer";
+import preloaderReducer from "./preloaderReducer";
 
 export const rootReducer = combineReducers({
-  fetchUsers,
+    preloader: preloaderReducer
 });
