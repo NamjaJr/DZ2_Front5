@@ -19,19 +19,21 @@ function MainPage() {
         });
     };
 
-    const regName = /^[a-zA-Z] +$/
+    const regName = /^[a-zA-Z]+$/;
 
     const addUser = (event) => {
         event.preventDefault();
-    if (user.email.trim() === '' && user.name.trim() === '' && user.username.trim() === '') {
-        return alert('Заполните все поля')
-    }
-    if (regName.test(!user.name)){
-        return alert('Имя должно состоять только из букв')
-    }
-
-
-        dispatch(addUserAction(user));
+        if (
+            user.email.trim() === "" ||
+            user.name.trim() === "" ||
+            user.username.trim() === ""
+        ) {
+            return alert("Заполните все поля");
+        } else if (!regName.test(user.name)) {
+            return alert("Имя должно состоять только из букв");
+        } else {
+            dispatch(addUserAction(user));
+        }
     };
 
     return (

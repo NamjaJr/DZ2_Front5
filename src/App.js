@@ -15,7 +15,7 @@ const App = () => {
        <Menu/>
        <Routes>
            <Route index element={<MainPage/>}/>
-           <Route path= '/users' element={<UsersPage/>}/>
+           <Route path= {'/users'} element = {<UsersPage/>}/>
            <Route/>
            <Route/>
        </Routes>
