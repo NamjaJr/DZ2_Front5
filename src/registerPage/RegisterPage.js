@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Col, Button, Spinner } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
-import { addUserAction } from "../../reduxjs/actions/actions";
+import registerSlice, {getUser} from "../store/RegisterSlice";
 
-function UsersPage() {
+
+function RegisterPage() {
     const dispatch = useDispatch();
-    const preloader = useSelector(state => state.preloader.preloader);
+    const preloader = useSelector(state => state.registerSlice.preloader);
     const [user, setUser] = useState({
         fullName: '',
         username: '',
@@ -38,7 +39,7 @@ function UsersPage() {
         } else if (user.password !== user.confirmPassword) {
             return alert('Пароли не совпадают');
         } else {
-            dispatch(addUserAction(user));
+            dispatch(getUser(user));
         }
     };
 
@@ -111,4 +112,4 @@ function UsersPage() {
     );
 }
 
-export default UsersPage;
+export default RegisterPage;
