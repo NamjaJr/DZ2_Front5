@@ -1,15 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./CounterSlice";
+import FrontendSlice from  './TabsSlice'
 
-import registerSlice from "./RegisterSlice";
 
 const store = configureStore({
     reducer: {
-        counter: counterReducer,
-        registerSlice: registerSlice,
+        FrontendSlice
     }
 });
-
 
 
 export default store;
