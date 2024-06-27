@@ -1,10 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import FrontendSlice from  './TabsSlice'
-
+import FrontendSlice from './FrontendSlice'
+import BackendSlice from "./BackendSlice";
+import AndroidSlice from "./AndroidSlice"
+import IosSlice from "./IosSlice";
+import UxUiSlise from "./UxUiSlise";
 
 const store = configureStore({
     reducer: {
-        FrontendSlice
+        FrontendSlice,
+        BackendSlice,
+        AndroidSlice,
+        IosSlice,
+        UxUiSlise,
     }
 });
 

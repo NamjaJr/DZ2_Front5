@@ -1,22 +1,22 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit";
-import Frontend from "../components/Frontend";
+import UxUi from "../components/UxUi";
 
-export const getFrontend = createAsyncThunk(
-    'getTabs',
-    async function (info,{dispatch}) {
+export const getUxUi = createAsyncThunk(
+    'getUxUi',
+    async function (_,{dispatch}) {
 
         dispatch(preloaderOn())
 
-        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
         const data = await response.json();
-        dispatch(getFrontend(data))
+        dispatch(getPosts(data))
         dispatch(preloaderOff())
     }
 );
 
 
-const FrontendSlice = createSlice({
-    name: 'Tabs',
+const UxUiSlice = createSlice({
+    name: 'UxUi',
     initialState: {
         preloader: false,
         arrState: []
@@ -25,7 +25,7 @@ const FrontendSlice = createSlice({
         preloaderOn: (state) => {
             state.preloader = true
         },
-        getFrontend:(state,action) => {
+        getPosts:(state,action) => {
             state.arrState = action.payload
         },
 
@@ -35,14 +35,7 @@ const FrontendSlice = createSlice({
     }
 })
 
-export const {preloaderOn, preloaderOff,getPosts} = FrontendSlice.actions
+export const {preloaderOn, preloaderOff,getPosts} = UxUiSlice.actions
 
 
-export default FrontendSlice.reducer
-
-
-
-
-
-
-
+export  default UxUiSlice.reducer
