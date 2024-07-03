@@ -21,9 +21,7 @@ const RegisterPage = () => {
         }else if(isRegistered) {
             alert('Пользователь уже зарегистрирован')
             return;
-        }
-
-        dispatch(register())
+        }else dispatch(register())
         setError('')
         alert('Регистрация прошла успешно')
     }
