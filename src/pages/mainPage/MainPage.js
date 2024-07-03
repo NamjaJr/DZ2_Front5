@@ -14,7 +14,7 @@ const MainPage = () => {
 
     return (
         <div>
-            <button onClick={handleRequest}>Send Request</button>
+            <button onClick={handleRequest}>Сделать запрос</button>
             {arrState.map((item) => (
                 <div key={item.id}>{item.title}</div>
             ))}
