@@ -1,11 +1,13 @@
 import React from 'react';
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import RegisterPage from "./pages/registerPage/RegisterPage";
 
 
 const App = () => {
     return (
         <div>
-            <Header/>
+            {/*<Header/>*/}
+            <RegisterPage/>
         </div>
     );
 };
