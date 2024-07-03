@@ -1,17 +1,13 @@
-import React from "react";
-import MainPage from "./pages/mainPage/MainPage";
-import TabsSlice from "./store/FrontendSlice";
+import React from 'react';
+import Header from "./components/Header";
+
 
 const App = () => {
-
     return (
-        <div className='App'>
-            <MainPage/>
-
+        <div>
+            <Header/>
         </div>
     );
 };
-
-
 
 export default App;

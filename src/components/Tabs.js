@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import {Tabs,Tab} from "@mui/material";
 
 function TabsComponent({categoriesSelect, value, setValue}) {

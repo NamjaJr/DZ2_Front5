@@ -1,8 +1,8 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit";
-import UxUi from "../components/UxUi";
 
-export const getUxUi = createAsyncThunk(
-    'getUxUi',
+
+export const getMain = createAsyncThunk(
+    'getMain',
     async function (_,{dispatch}) {
 
         dispatch(preloaderOn())
@@ -15,8 +15,8 @@ export const getUxUi = createAsyncThunk(
 );
 
 
-const UxUiSlice = createSlice({
-    name: 'UxUi',
+const MainSlice = createSlice({
+    name: 'MainPage',
     initialState: {
         preloader: false,
         arrState: []
@@ -35,7 +35,7 @@ const UxUiSlice = createSlice({
     }
 })
 
-export const {preloaderOn, preloaderOff,getPosts} = UxUiSlice.actions
+export const {preloaderOn, preloaderOff,getPosts} = MainSlice.actions
 
 
-export  default UxUiSlice.reducer
+export default MainSlice.reducer

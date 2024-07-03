@@ -1,20 +1,17 @@
-import { configureStore } from "@reduxjs/toolkit";
-import FrontendSlice from './FrontendSlice'
-import BackendSlice from "./BackendSlice";
-import AndroidSlice from "./AndroidSlice"
-import IosSlice from "./IosSlice";
-import UxUiSlise from "./UxUiSlise";
+import { configureStore } from '@reduxjs/toolkit';
+import aboutReducer from './AboutSlice';
+import mainReducer from './MainSlice';
+import userReducer from './UserSlice';
+import requestSlice from "./RequestSlice";
 
 const store = configureStore({
     reducer: {
-        FrontendSlice,
-        BackendSlice,
-        AndroidSlice,
-        IosSlice,
-        UxUiSlise,
-    }
+        AboutSlice: aboutReducer,
+        MainSlice: mainReducer,
+        UserSlice: userReducer,
+        request: requestSlice
+    },
 });
-
 
 export default store;
 

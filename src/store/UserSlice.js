@@ -1,8 +1,8 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit";
-import Backend from "../components/Backend";
 
-export const getBackend = createAsyncThunk(
-    'getBackend',
+
+export const getUser = createAsyncThunk(
+    'getUser',
     async function (_,{dispatch}) {
 
         dispatch(preloaderOn())
@@ -15,8 +15,8 @@ export const getBackend = createAsyncThunk(
 );
 
 
-const BackendSlice = createSlice({
-    name: 'Backend',
+const UserSlice = createSlice({
+    name: 'USerPage',
     initialState: {
         preloader: false,
         arrState: []
@@ -35,7 +35,7 @@ const BackendSlice = createSlice({
     }
 })
 
-export const {preloaderOn, preloaderOff,getPosts} = BackendSlice.actions
+export const {preloaderOn, preloaderOff,getPosts} = UserSlice.actions
 
 
-export  default BackendSlice.reducer
+export default UserSlice.reducer
