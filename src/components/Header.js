@@ -1,4 +1,3 @@
-// Header.js
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AboutPage from "../pages/aboutPage/AboutPage";
@@ -62,4 +61,5 @@ const Header = () => {
 };
 
 export default Header;
+
 
