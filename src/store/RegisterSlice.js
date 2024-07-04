@@ -1,7 +1,7 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    isRegistered: false
+    alrdReg: false
 }
 
 const registerSlice = createSlice({
@@ -9,20 +9,18 @@ const registerSlice = createSlice({
     initialState,
     reducers: {
         register: (state) => {
-            state.isRegistered = true
+            state.alrdReg = true
         }
     }
 })
 
+export const { register } = registerSlice.actions;
+export default registerSlice.reducer;
 
 
-const store = configureStore({
-    reducer: {
-        registration: registerSlice.reducer
-    },
-})
 
-export const { register } = registerSlice.actions
-export default store
+
+
+
 
 

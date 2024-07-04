@@ -3,7 +3,7 @@ import aboutReducer from './AboutSlice';
 import mainReducer from './MainSlice';
 import userReducer from './UserSlice';
 import requestSlice from "./RequestSlice";
-import registerSlice from "./RegisterSlice";
+import registerReducer from './RegisterSlice';
 
 const store = configureStore({
     reducer: {
@@ -11,11 +11,14 @@ const store = configureStore({
         MainSlice: mainReducer,
         UserSlice: userReducer,
         request: requestSlice,
-        RegisterSlice:registerSlice
+        register: registerReducer
     },
 });
 
 export default store;
+
+
+
 
 
 
